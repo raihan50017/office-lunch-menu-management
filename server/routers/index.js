@@ -1,6 +1,7 @@
 const adminRouter = require("./adminRouter");
 const menuOptionRouter = require("./menuOptionRouter");
 const employeeRouter = require("./employeeRouter");
+const employeeChoiceRouter = require("./employeeChoiceRouter");
 
 // Import other routers here
 
@@ -16,6 +17,10 @@ const routes = [
   {
     path: "/employee",
     router: employeeRouter,
+  },
+  {
+    path: "/employee-choice",
+    router: employeeChoiceRouter,
   },
 ];
 
