@@ -24,14 +24,19 @@ const Registration = () => {
     try {
       await apiClient
         .post("/employee/register", formData)
-        .then(() => {
+        .then((response) => {
           setErrors({});
           setFormData({ firstName: "", lastName: "", email: "", password: "" });
           setSuccessMessage("Registration Successfulll!");
-
+          localStorage.setItem(
+            "auth-data",
+            JSON.stringify({
+              access_token: response?.data?.token,
+            })
+          );
           setTimeout(() => {
             navigate("/");
-          }, 3000);
+          }, 1000);
         })
         .catch((error) => {
           setErrors(error?.response?.data?.errors);
