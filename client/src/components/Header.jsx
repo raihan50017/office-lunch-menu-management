@@ -1,10 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
-import { Dropdown, Button, Container } from "react-bootstrap";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Dropdown, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-function Header({ handleOffcanvasShow }) {
+function Header() {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("auth-data");
@@ -19,12 +18,6 @@ function Header({ handleOffcanvasShow }) {
         <div className="d-flex align-items-center justify-content-between  py-2  text-white shadow-sm">
           <div>
             <h4 className="m-0 d-none d-md-block">Logo</h4>
-            <Button
-              variant="primary d-block d-md-none p-0 m-0 bg-transparent border-0 rounded-0"
-              onClick={handleOffcanvasShow}
-            >
-              <FontAwesomeIcon className="fs-3" icon={faBars}></FontAwesomeIcon>
-            </Button>
           </div>
           <div className="d-flex">
             <Dropdown>
