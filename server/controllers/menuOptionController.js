@@ -92,6 +92,14 @@ const deleteMenuOptionController = async (req, res, next) => {
   try {
     const { menu_id } = req.params;
 
+    // Delete the menu option from employee choice list
+    const deleteMenuOptionQueryFromChoiceList =
+      "DELETE FROM employeechoices WHERE menu_id = $1 RETURNING *";
+    const deletedMenuOptionResultFromChoiceList = await pool.query(
+      deleteMenuOptionQueryFromChoiceList,
+      [menu_id]
+    );
+
     // Delete the menu option
     const deleteMenuOptionQuery =
       "DELETE FROM menuoptions WHERE menu_id = $1 RETURNING *";
