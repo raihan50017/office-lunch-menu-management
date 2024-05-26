@@ -2,7 +2,11 @@ import { Row, Col, Table, Form, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import apiClient from "../../hooks/axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSave } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowCircleRight,
+  faArrowRight,
+  faSave,
+} from "@fortawesome/free-solid-svg-icons";
 function Home() {
   const [todaysMenuOptions, setTodaysMenuOptions] = useState([]);
   const [choosedOption, setChoosedOption] = useState(null);
@@ -69,14 +73,19 @@ function Home() {
         <div className="border-bottom p-2 bg-success text-white">
           <h5 className="text-center m-0 shadow-sm ">Your Choice</h5>
         </div>
-        <Table>
-          <thead></thead>
-          <tbody>
-            <tr>
-              <td>{choosedOption?.option_name}</td>
-            </tr>
-          </tbody>
-        </Table>
+        {choosedOption ? (
+          <Table>
+            <thead></thead>
+            <tbody>
+              <tr>
+                <td>{choosedOption?.option_name}</td>
+              </tr>
+            </tbody>
+          </Table>
+        ) : (
+          <p className="text-center text-danger">Not choosen yet</p>
+        )}
+
         <div className="border p-2 mt-5">
           <h5 className="text-center">Choose</h5>
           <Form method="post" onSubmit={handleSubmit}>
@@ -125,16 +134,25 @@ function Home() {
             <h5 className="text-center m-0">Todays Menu</h5>
           </div>
           <div>
-            <Table>
-              <thead></thead>
-              <tbody>
-                {todaysMenuOptions?.map((option) => (
-                  <tr key={option.menu_id}>
-                    <td className="shadow-sm">{option.option_name}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
+            {todaysMenuOptions?.length === 0 ? (
+              <p className="text-center text-danger">No data found</p>
+            ) : (
+              <Table>
+                <thead></thead>
+                <tbody>
+                  {todaysMenuOptions?.map((option) => (
+                    <tr key={option.menu_id}>
+                      <td className="shadow-sm">
+                        <FontAwesomeIcon
+                          icon={faArrowCircleRight}
+                        ></FontAwesomeIcon>{" "}
+                        {option.option_name}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            )}
           </div>
         </div>
       </Col>

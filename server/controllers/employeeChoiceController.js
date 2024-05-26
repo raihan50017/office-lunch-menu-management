@@ -91,8 +91,13 @@ const getAllEmployeeChoicesByCurrentDateController = async (req, res, next) => {
     const currentDate = getCurrentDate();
 
     // Retrieve all employee choices for the current date
-    const getAllEmployeeChoicesQuery =
-      "SELECT * FROM employeechoices WHERE date = $1";
+    const getAllEmployeeChoicesQuery = `
+    SELECT ec.*, e.first_name, e.last_name, mo.option_name
+    FROM employeechoices ec
+    JOIN employees e ON ec.emp_id = e.emp_id
+    JOIN menuoptions mo ON ec.menu_id = mo.menu_id
+    WHERE ec.date = $1
+  `;
     const employeeChoicesResult = await pool.query(getAllEmployeeChoicesQuery, [
       currentDate,
     ]);
