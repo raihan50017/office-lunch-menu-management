@@ -69,7 +69,7 @@ function Home() {
 
   return (
     <Row className="mt-3">
-      <Col md={6}>
+      <Col md={6} className="mb-2">
         <div className="border-bottom p-2 bg-success text-white">
           <h5 className="text-center m-0 shadow-sm ">Your Choice</h5>
         </div>
@@ -127,9 +127,9 @@ function Home() {
           </Form>
         </div>
       </Col>
-      <Col md={6}>
+      <Col md={6} className="mb-2">
         {" "}
-        <div className="px-3  mb-2">
+        <div className="mb-2">
           <div className="text-center bg-success text-light border-bottom p-2">
             <h5 className="text-center m-0">Todays Menu</h5>
           </div>
