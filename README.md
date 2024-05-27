@@ -48,7 +48,7 @@ const apiClient = axios.create({
 
 1. Navigate to the `client` folder.
 2. Install all the packages by running the command: npm install
-3. 3. Set the Axios base URL same as the server URL.
+3. Set the Axios base URL same as the server URL.
 
 ```javascript
 const axios = require("axios");
