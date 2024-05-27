@@ -48,7 +48,7 @@ const Login = () => {
       <Row className="justify-content-center">
         <Col xs={12} md={6}>
           <div className="p-3 bg-light rounded shadow-sm">
-            <h2 className="mb-4">Admin Login</h2>
+            <h2 className="mb-4">Employee Login</h2>
             <span className="text-success text-center d-block">
               {successMessage}
             </span>
