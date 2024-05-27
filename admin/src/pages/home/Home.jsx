@@ -43,7 +43,7 @@ function Home() {
 
   const fetchTodaysMenuOptions = async () => {
     try {
-      const authData = JSON.parse(localStorage.getItem("auth-data"));
+      const authData = JSON.parse(localStorage.getItem("admin-auth-data"));
       const response = await apiClient.get(
         "/menu-option/fetch-by-current-date",
         {
@@ -59,7 +59,7 @@ function Home() {
   const fetchByDateMenuOptions = async () => {
     try {
       if (searchDate) {
-        const authData = JSON.parse(localStorage.getItem("auth-data"));
+        const authData = JSON.parse(localStorage.getItem("admin-auth-data"));
         const response = await apiClient.get(
           `/menu-option/fetch-by-date/${searchDate}`,
           {
@@ -85,7 +85,7 @@ function Home() {
   const handleAddOption = async (e) => {
     e.preventDefault();
     try {
-      const authData = JSON.parse(localStorage.getItem("auth-data"));
+      const authData = JSON.parse(localStorage.getItem("admin-auth-data"));
       await apiClient.post("/menu-option/add", formData, {
         headers: { Authorization: authData?.access_token },
       });
@@ -122,7 +122,7 @@ function Home() {
   const handleUpdateOption = async (e) => {
     e.preventDefault();
     try {
-      const authData = JSON.parse(localStorage.getItem("auth-data"));
+      const authData = JSON.parse(localStorage.getItem("admin-auth-data"));
       await apiClient.put(`/menu-option/update/${currentMenuId}`, formData, {
         headers: { Authorization: authData?.access_token },
       });
@@ -136,7 +136,7 @@ function Home() {
 
   const handleDeleteOption = async () => {
     try {
-      const authData = JSON.parse(localStorage.getItem("auth-data"));
+      const authData = JSON.parse(localStorage.getItem("admin-auth-data"));
       await apiClient
         .delete(`/menu-option/delete/${currentMenuId}`, {
           headers: { Authorization: authData?.access_token },
