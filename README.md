@@ -2,11 +2,11 @@
 
 Follow these steps to set up and run the project:
 
-## Download Project
+### Download Project
 
 Clone or download the repository and switch to the master branch.
 
-## Server Setup
+### Server Setup
 
 1. Navigate to the server folder.
 2. Install all the packages by running the command: `npm install`.
@@ -29,11 +29,11 @@ module.exports = pool;
 ```
 
 
-## Admin Setup
+### Admin Setup
 
 1. Navigate to the `admin` folder.
 2. Install all the packages by running the command: npm install
-3. 3. Set the Axios base URL same as the server URL.
+3. Set the Axios base URL same as the server URL.
 
 ```javascript
 const axios = require("axios");
@@ -44,7 +44,7 @@ const apiClient = axios.create({
 ```
 
 
-## Client Setup
+### Client Setup
 
 1. Navigate to the `client` folder.
 2. Install all the packages by running the command: npm install
@@ -58,7 +58,7 @@ const apiClient = axios.create({
 });
 ```
 
-## Run The Project
+### Run The Project
 
 After installing packages, return to the root directory.
 
@@ -66,9 +66,9 @@ Ensure that you have globally installed `concurrently` and `nodemon`.
 
 Run the command: npm run dev
 
-## Login Credentials
+### Login Credentials
 
-- For admin login, use email: `admin@gmail.com`.
+- For admin login, use email: `admin@gmail.com`, password: `123456`.
 - For employees, register as an employee first and then login.
 
 
