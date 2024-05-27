@@ -1,8 +1,8 @@
-# Project Setup Instructions
+## Project Setup Instructions
 
 Follow these steps to set up and run the project:
 
-## Clone Repository and Switch to Master Branch
+## Download Project
 
 Clone or download the repository and switch to the master branch.
 
@@ -26,6 +26,7 @@ const pool = new Pool({
 });
 
 module.exports = pool;
+```
 
 
 ## Admin Setup
@@ -40,6 +41,7 @@ const axios = require("axios");
 const apiClient = axios.create({
   baseURL: "http://localhost:8000",
 });
+```
 
 
 ## Client Setup
@@ -54,31 +56,20 @@ const axios = require("axios");
 const apiClient = axios.create({
   baseURL: "http://localhost:8000",
 });
+```
 
-##Run The Project
+## Run The Project
 
 After installing packages, return to the root directory.
 
 Ensure that you have globally installed `concurrently` and `nodemon`.
 
-Run the command:npm run dev
-
-```markdown
-After installing packages, return to the root directory.
-
-Ensure that you have globally installed `concurrently` and `nodemon`.
-
-Run the command:
-```
-npm run dev
-```
-to start the project.
+Run the command: npm run dev
 
 ## Login Credentials
 
 - For admin login, use email: `admin@gmail.com`.
 - For employees, register as an employee first and then login.
-```
 
 
 
