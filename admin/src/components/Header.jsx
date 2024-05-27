@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 function Header({ handleOffcanvasShow }) {
   const navigate = useNavigate();
   const handleLogout = () => {
-    localStorage.removeItem("auth-data");
+    localStorage.removeItem("admin-auth-data");
     navigate("/auth/login");
   };
   return (
