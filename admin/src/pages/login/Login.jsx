@@ -25,7 +25,7 @@ const Login = () => {
           setErrors({});
           setSuccessMessage("Login Successfulll!");
           localStorage.setItem(
-            "auth-data",
+            "admin-auth-data",
             JSON.stringify({
               access_token: response?.data?.token,
             })
